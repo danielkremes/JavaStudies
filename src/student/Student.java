@@ -13,6 +13,21 @@ public class Student {
     private String gradeEnrollment;
     private String nameSchool;
 
+    private double gradeOne;
+    private double gradeTwo;
+    private double gradeThree;
+    private double gradeFour;
+
+    public Student() {
+
+    }
+
+    // Add constructor with two parameters (nameStudent, ageStudent)
+    public Student(String nameStudent, int ageStudent) {
+        nameStudent = this.getName();
+        ageStudent = this.getAge();
+    }
+
     public String getName() {
         return name;
     }
@@ -84,4 +99,42 @@ public class Student {
     public void setNameSchool(String nameSchool) {
         this.nameSchool = nameSchool;
     }
+
+    public double getGradeOne() {
+        return gradeOne;
+    }
+
+    public void setGradeOne(double gradeOne) {
+        this.gradeOne = gradeOne;
+    }
+
+    public double getGradeTwo() {
+        return gradeTwo;
+    }
+
+    public void setGradeTwo(double gradTwo) {
+        this.gradeTwo = gradTwo;
+    }
+
+    public double getGradeThree() {
+        return gradeThree;
+    }
+
+    public void setGradeThree(double gradeThree) {
+        this.gradeThree = gradeThree;
+    }
+
+    public double getGradeFour() {
+        return gradeFour;
+    }
+
+    public void setGradeFour(double gradeFour) {
+        this.gradeFour = gradeFour;
+    }
+
+    // Add method calculate average with based in 4 grades.
+    public double getAverage() {
+        return ( getGradeOne() + getGradeTwo() + getGradeThree() + getGradeFour() ) / 4;
+    }
+
 }
