@@ -1,16 +1,29 @@
 import student.Student;
 
+import javax.swing.*;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Student student = new Student();
 
-        // Set grades
-        student.setGradeOne(90);
-        student.setGradeTwo(90);
-        student.setGradeThree(90);
-        student.setGradeFour(90);
+        // Get name student
+        String nameStudent = JOptionPane.showInputDialog("Enter name student ?");
+        student.setName(nameStudent);
+
+        // Get and Set grade for student
+        String gradeOne = JOptionPane.showInputDialog("Enter tbe grade one ");
+        student.setGradeOne(Double.parseDouble(gradeOne));
+
+        String gradeTwo = JOptionPane.showInputDialog("Enter tbe grade two ");
+        student.setGradeTwo(Double.parseDouble(gradeTwo));
+
+        String gradeThree = JOptionPane.showInputDialog("Enter tbe grade three ");
+        student.setGradeThree(Double.parseDouble(gradeThree));
+
+        String gradeFour = JOptionPane.showInputDialog("Enter tbe grade four ");
+        student.setGradeFour(Double.parseDouble(gradeFour));
 
         // Show average grade
         System.out.println("Average student: " + student.getAverage());
