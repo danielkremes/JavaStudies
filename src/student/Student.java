@@ -137,4 +137,16 @@ public class Student {
         return ( getGradeOne() + getGradeTwo() + getGradeThree() + getGradeFour() ) / 4;
     }
 
+    // Add method to Approved or Reproved
+    public boolean getApproved() {
+        if (getAverage() > 50) {
+            if (getAverage() > 70) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

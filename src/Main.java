@@ -13,7 +13,9 @@ public class Main {
         student.setGradeFour(90);
 
         // Show average grade
-        System.out.println(student.getAverage());
+        System.out.println("Average student: " + student.getAverage());
+        // Show student approved or not
+        System.out.println("Student Approved " + student.getApproved());
 
     }
 }
