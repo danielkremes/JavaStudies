@@ -1,5 +1,7 @@
 package student;
 
+import java.util.Objects;
+
 public class Student {
 
     // Attributes
@@ -148,5 +150,31 @@ public class Student {
         } else {
             return false;
         }
+    }
+
+    // Add method 2 to Approved or Reproved
+    public String getApproved2() {
+        double average = getAverage();
+        if (average > 60) {
+            if (average > 70) {
+                return "You are approved";
+            } else {
+                return "You are in recuperation";
+            }
+        } else {
+            return "You are reproved";
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Objects.equals(numberCPF, student.numberCPF) && Objects.equals(rg, student.rg) && Objects.equals(nameSchool, student.nameSchool);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberCPF, rg, nameSchool);
     }
 }
