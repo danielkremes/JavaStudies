@@ -11,16 +11,16 @@ public class Main {
 
         // Get and Set grade for student
         String gradeOne = JOptionPane.showInputDialog("Enter tbe grade one ");
-        student.setGradeOne(Double.parseDouble(gradeOne));
+        student.getDiscipline().setGradeOne(Double.parseDouble(gradeOne));
 
         String gradeTwo = JOptionPane.showInputDialog("Enter tbe grade two ");
-        student.setGradeTwo(Double.parseDouble(gradeTwo));
+        student.getDiscipline().setGradeTwo(Double.parseDouble(gradeTwo));
 
         String gradeThree = JOptionPane.showInputDialog("Enter tbe grade three ");
-        student.setGradeThree(Double.parseDouble(gradeThree));
+        student.getDiscipline().setGradeThree(Double.parseDouble(gradeThree));
 
         String gradeFour = JOptionPane.showInputDialog("Enter tbe grade four ");
-        student.setGradeFour(Double.parseDouble(gradeFour));
+        student.getDiscipline().setGradeFour(Double.parseDouble(gradeFour));
 
         // Show average grade
         System.out.println("Average student: " + student.getAverage());

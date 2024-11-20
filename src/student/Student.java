@@ -15,10 +15,7 @@ public class Student {
     private String gradeEnrollment;
     private String nameSchool;
 
-    private double gradeOne;
-    private double gradeTwo;
-    private double gradeThree;
-    private double gradeFour;
+    Discipline discipline = new Discipline();
 
     public Student() {
 
@@ -28,6 +25,14 @@ public class Student {
     public Student(String nameStudent, int ageStudent) {
         nameStudent = this.getName();
         ageStudent = this.getAge();
+    }
+
+    public Discipline getDiscipline() {
+        return discipline;
+    }
+
+    public void setDiscipline(Discipline discipline) {
+        this.discipline = discipline;
     }
 
     public String getName() {
@@ -102,41 +107,10 @@ public class Student {
         this.nameSchool = nameSchool;
     }
 
-    public double getGradeOne() {
-        return gradeOne;
-    }
-
-    public void setGradeOne(double gradeOne) {
-        this.gradeOne = gradeOne;
-    }
-
-    public double getGradeTwo() {
-        return gradeTwo;
-    }
-
-    public void setGradeTwo(double gradTwo) {
-        this.gradeTwo = gradTwo;
-    }
-
-    public double getGradeThree() {
-        return gradeThree;
-    }
-
-    public void setGradeThree(double gradeThree) {
-        this.gradeThree = gradeThree;
-    }
-
-    public double getGradeFour() {
-        return gradeFour;
-    }
-
-    public void setGradeFour(double gradeFour) {
-        this.gradeFour = gradeFour;
-    }
-
     // Add method calculate average with based in 4 grades.
     public double getAverage() {
-        return ( getGradeOne() + getGradeTwo() + getGradeThree() + getGradeFour() ) / 4;
+        return ( discipline.getGradeOne() + discipline.getGradeTwo()
+                + discipline.getGradeThree() + discipline.getGradeFour() ) / 4;
     }
 
     // Add method to Approved or Reproved
