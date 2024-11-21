@@ -2,40 +2,30 @@ package student;
 
 public class Discipline {
 
-    private double gradeOne;
-    private double gradeTwo;
-    private double gradeThree;
-    private double gradeFour;
+    private double grades;
+    private String disciplinesName;
 
-    public double getGradeOne() {
-        return gradeOne;
+    public double getGrades() {
+        return grades;
     }
 
-    public void setGradeOne(double gradeOne) {
-        this.gradeOne = gradeOne;
+    public void setGrades(double grades) {
+        this.grades = grades;
     }
 
-    public double getGradeTwo() {
-        return gradeTwo;
+    public String getDisciplinesName() {
+        return disciplinesName;
     }
 
-    public void setGradeTwo(double gradeTwo) {
-        this.gradeTwo = gradeTwo;
+    public void setDisciplinesName(String disciplinesName) {
+        this.disciplinesName = disciplinesName;
     }
 
-    public double getGradeThree() {
-        return gradeThree;
-    }
-
-    public void setGradeThree(double gradeThree) {
-        this.gradeThree = gradeThree;
-    }
-
-    public double getGradeFour() {
-        return gradeFour;
-    }
-
-    public void setGradeFour(double gradeFour) {
-        this.gradeFour = gradeFour;
+    @Override
+    public String toString() {
+        return "Discipline{" +
+                "grades=" + grades +
+                ", disciplinesName='" + disciplinesName + '\'' +
+                '}';
     }
 }

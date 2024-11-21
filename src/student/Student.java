@@ -1,5 +1,7 @@
 package student;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Student {
@@ -15,7 +17,7 @@ public class Student {
     private String gradeEnrollment;
     private String nameSchool;
 
-    Discipline discipline = new Discipline();
+    List<Discipline> discipline = new ArrayList<>();
 
     public Student() {
 
@@ -27,11 +29,11 @@ public class Student {
         ageStudent = this.getAge();
     }
 
-    public Discipline getDiscipline() {
+    public List<Discipline> getDiscipline() {
         return discipline;
     }
 
-    public void setDiscipline(Discipline discipline) {
+    public void setDiscipline(List<Discipline> discipline) {
         this.discipline = discipline;
     }
 
@@ -109,8 +111,11 @@ public class Student {
 
     // Add method calculate average with based in 4 grades.
     public double getAverage() {
-        return ( discipline.getGradeOne() + discipline.getGradeTwo()
-                + discipline.getGradeThree() + discipline.getGradeFour() ) / 4;
+        double sum = 0.0;
+        for (Discipline discipline1 : discipline) {
+            sum += discipline1.getGrades();
+        }
+        return sum / discipline.size();
     }
 
     // Add method to Approved or Reproved
@@ -131,12 +136,12 @@ public class Student {
         double average = getAverage();
         if (average > 60) {
             if (average > 70) {
-                return "You are approved";
+                return StudentStatus.APPROVED;
             } else {
-                return "You are in recuperation";
+                return StudentStatus.RECUPERATION;
             }
         } else {
-            return "You are reproved";
+            return StudentStatus.REPROVED;
         }
     }
 
@@ -150,5 +155,21 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(numberCPF, rg, nameSchool);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", birthDate='" + birthDate + '\'' +
+                ", numberCPF='" + numberCPF + '\'' +
+                ", rg='" + rg + '\'' +
+                ", fatherName='" + fatherName + '\'' +
+                ", motherName='" + motherName + '\'' +
+                ", gradeEnrollment='" + gradeEnrollment + '\'' +
+                ", nameSchool='" + nameSchool + '\'' +
+                ", discipline=" + discipline +
+                '}';
     }
 }
