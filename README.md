@@ -1,7 +1,7 @@
 # Studies about java
 
 *   Object-Oriented Programming - DONE
-*   Try Exception - STUDYING
+*   Exceptions - DONE
 *   Arrays/Vectors/Matrix - STUDYING
 *   Threads - STUDYING
 
