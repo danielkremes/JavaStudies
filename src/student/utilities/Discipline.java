@@ -1,12 +1,14 @@
 package student.utilities;
 
+import java.util.Arrays;
+
 /**
  * The Discipline class represents an academic discipline for a student.
  * It holds information about the discipline's name and the student's grade in that discipline.
  */
 public class Discipline {
 
-    private double grades;             // The grade achieved by the student in the discipline
+    private double[] grades = new double[4];             // The grade achieved by the student in the discipline
     private String disciplinesName;    // The name of the academic discipline
 
     /**
@@ -14,7 +16,7 @@ public class Discipline {
      *
      * @return the grade in the discipline
      */
-    public double getGrades() {
+    public double[] getGrades() {
         return grades;
     }
 
@@ -24,7 +26,7 @@ public class Discipline {
      * @param grades the grade to set
      */
     public void setGrades(double grades) {
-        this.grades = grades;
+        this.grades = new double[]{grades};
     }
 
     /**
@@ -46,6 +48,22 @@ public class Discipline {
     }
 
     /**
+     * Calculates the total sum of all grades in the array.
+     * <p>
+     * Iterates through the array of grades and adds each grade to a running total.
+     * This method ensures that the sum is calculated correctly without redundancy.
+     *
+     * @return the total sum of all grades in the {@code grades} array.
+     */
+    public double getSumGrades() {
+        double sum = 0.0;
+        for (double grade : grades) {
+            sum += grade; // Correctly adds each grade
+        }
+        return sum;
+    }
+
+    /**
      * Returns a string representation of the Discipline object,
      * including the discipline's name and the student's grade.
      *
@@ -54,7 +72,7 @@ public class Discipline {
     @Override
     public String toString() {
         return "Discipline{" +
-                "grades=" + grades +
+                "grades=" + Arrays.toString(grades) +
                 ", disciplinesName='" + disciplinesName + '\'' +
                 '}';
     }

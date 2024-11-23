@@ -4,6 +4,7 @@ import student.abstracts.People;
 import student.testsClass.SalaryStatus;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -114,11 +115,11 @@ public class Student extends People {
      * @return the average grade
      */
     public double getAverage() {
-        double sum = 0.0;
+        double sumGrades = 0.0;
         for (Discipline discipline1 : discipline) {
-            sum += discipline1.getGrades();
+            sumGrades += discipline1.getSumGrades();
         }
-        return sum / discipline.size();
+        return sumGrades / discipline.size();
     }
 
     /**

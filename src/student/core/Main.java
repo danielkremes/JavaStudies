@@ -47,7 +47,7 @@ public class Main {
                 HashMap<String, List<Student>> studentList = new HashMap<>();
 
                 // Loop to collect student data
-                for (int qtdStudent = 0; qtdStudent < 2; qtdStudent++) {
+                for (int qtdStudent = 0; qtdStudent < 1; qtdStudent++) {
                     Student student = new Student();
 
                     // Collect student name
@@ -55,12 +55,12 @@ public class Main {
                     student.setName(nameStudent);
 
                     // Loop to collect discipline and grade data
-                    for (int i = 1; i <= 2; i++) {
+                    for (int i = 1; i <= 1; i++) {
                         Discipline discipline = new Discipline();
 
                         // Collect discipline name
-                        String nameDiscipline = JOptionPane.showInputDialog("Name of discipline " + i + ":");
-                        discipline.setDisciplinesName(nameDiscipline);
+                         String nameDiscipline = JOptionPane.showInputDialog("Name of discipline " + i + ":");
+                         discipline.setDisciplinesName(nameDiscipline);
 
                         // Collect and parse grade
                         String grade = JOptionPane.showInputDialog("Grade for discipline " + i + ":");
@@ -113,10 +113,15 @@ public class Main {
                 // Display disciplines for each student
                 for (Student student : students) {
                     System.out.println("Student: " + student.getName());
-                    for (Discipline discipline : student.getDiscipline()) {
-                        System.out.println("Discipline: " + discipline.getDisciplinesName());
-                    }
+//                    for (Discipline discipline : student.getDiscipline()) {
+//                        System.out.println("Discipline: " + discipline.getDisciplinesName());
+//                    }
                     System.out.println(student.getApproved2());
+                    System.out.println(student.getAverage());
+
+                    JOptionPane.showMessageDialog(null,"Name: " + student.getName() + ","
+                            + student.getDiscipline().iterator().next().getDisciplinesName() + ", "
+                            + student.getApproved() + ", " + student.getAverage());
                 }
 
                 // Modify a specific student's data
