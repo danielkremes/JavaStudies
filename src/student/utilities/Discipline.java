@@ -64,6 +64,36 @@ public class Discipline {
     }
 
     /**
+     * Finds the largest grade from the grades array.
+     *
+     * @return the highest grade in the grades array
+     */
+    public double getLargerGrade () {
+        double gradeMax = Double.NEGATIVE_INFINITY; // Start with the lowest possible value
+        for (Double grade: getGrades()) {  // Use a foreach loop for simplicity
+            if (grade > gradeMax) {
+                gradeMax = grade;
+            }
+        }
+        return gradeMax;
+    }
+
+    /**
+     * Finds the smallest grade from the grades array.
+     *
+     * @return the smallest grade in the grades array
+     */
+    public double getSmallestGrade() {
+        double gradeMin = Double.POSITIVE_INFINITY;  // Start with the highest possible value
+        for (double grade: getGrades()) {
+           if (grade < gradeMin) {
+               gradeMin = grade;
+           }
+        }
+        return gradeMin;
+    }
+
+    /**
      * Returns a string representation of the Discipline object,
      * including the discipline's name and the student's grade.
      *
